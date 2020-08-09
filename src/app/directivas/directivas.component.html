@@ -1,0 +1,60 @@
+<h1>Directivas</h1>
+
+<button class="btn btn-outline-primary" (click)="isValid=!isValid">Cambiar estado</button>
+
+<h2>NgIf Then Else</h2>
+<!-- *ngIf="isValid; then templateSiTrue else TemplatesiNo" -->
+<p *ngIf="isValid; then siEsValidoTemplate else noEsValidoTemplate"></p>
+
+<!--Template de Angular-->
+<ng-template #siEsValidoTemplate>
+  <strong>SI</strong> es Valido
+</ng-template>
+<ng-template #noEsValidoTemplate>
+  <strong>NO</strong> es Valido
+</ng-template>
+
+<h2>Hidden</h2>
+<!--Oculta el elemento, pero si lo carga a la pagina-->
+<p [hidden]="!isValid">Se Escondio ? </p>
+
+<h2>NgFor</h2>
+<ul>
+  <li *ngFor="let persona of personas;let i = index">{{persona}}</li>
+</ul>
+
+<h2>NgSwitchCase</h2>
+<ul [ngSwitch]="personas[0]">
+  <li *ngSwitchCase="'gus'" class="text-primary">Es Gus</li>
+  <li *ngSwitchCase="'lau'" class="text-primary">Es Lau</li>
+  <li *ngSwitchCase="'mart'" class="text-primary">Es Mart</li>
+</ul>
+
+<h2>NgStyle</h2>
+<div [style.backgroundColor]="isValid ? 'green' : 'red'"
+     [style.color]="isValid ? 'white' : 'black'">
+  <h4>IsValid [style.]</h4>
+</div>
+<div [ngStyle]="{'backgroundColor':'red', 'color':'white'}">
+  <h4>IsValid [ngStyle]</h4>
+</div>
+<div [ngStyle]="{'backgroundColor': isValid ? 'blue' : 'red', 'color': getColor()}">
+  <h4>IsValid [ngStyle variables/funcion]</h4>
+</div>
+
+<h2>NgClass</h2>
+<div [ngClass]="{
+  'is-active' : isValid,
+  'no-active': !isValid
+}">
+  <h4>IsValid [ngClass variables/funcion]</h4>
+</div>
+<h2>Directiva personalizada</h2>
+<!--Le pasamos la directiva personalizada creada-->
+<!--appDirectivaPersonalizada se llama asi si no se le pasan parametros-->
+<!--[appDirectivaPersonalizada] se llama asi si recbie parametros-->
+<p [appDirectivaPersonalizada]="'blue'" >Has Hover sobre este texto y habre la consola</p>
+
+<h4>Operador trasnversal ?</h4>
+<!--Permite verificar si existe una propiedad y de ser el caso continua la ejecucion, en caso contrario la omite-->
+<p>personas.zapatos existe = {{personas?.zapatos}}</p>

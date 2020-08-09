@@ -1,0 +1,55 @@
+<h1>Pipes</h1>
+<h3>Default de angular</h3>
+<ul>
+  <li>
+    <p>{{curso.nombre}}</p>
+    <p>{{curso.nombre | uppercase}}</p>
+  </li>
+  <li>
+    <p>{{curso.costo}}</p>
+    <p>{{curso.costo | number}}</p>
+    <!-- number :'numero de enteros.numero minimo decimales.numero decimales maximo'-->
+    <p>{{curso.costo | number:'1.0-0'}}</p>
+    <p>{{curso.costo | currency:'USD'}}</p>
+  </li>
+  <li>
+    <p>{{curso.fecha}}</p>
+    <p>{{curso.fecha | date}}</p>
+    <p>{{curso.fecha | date:'short'}}</p>
+  </li>
+</ul>
+<h3>Pipe personalizado | cortando un string como un resume</h3>
+<p>{{'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto aut corporis deserunt doloremque earum eum nobis\n' +
+'  quibusdam quidem ratione sequi, tempora velit! Ipsum, nihil odit officiis reprehenderit sapiente similique vel? Amet\n' +
+'  at beatae corporis dignissimos et ipsam libero, molestias neque obcaecati possimus quas quo quod, veritatis? Enim\n' +
+'  nihil tenetur unde. Accusamus adipisci alias aliquam asperiores assumenda commodi cum cumque distinctio dolore\n' +
+'  eligendi esse eum expedita illo inventore, ipsa ipsum iste laudantium, modi molestiae nulla quam quas quos reiciendis\n' +
+'  sequi sunt ut voluptatum! Beatae culpa cum ducimus, enim est harum impedit ipsa ipsam laborum praesentium sint\n' +
+'  veritatis. A, ad culpa debitis dicta dolore ducimus illum ipsam magni nemo nulla odit omnis porro quisquam? Aperiam\n' +
+'  cumque maiores officiis reiciendis voluptatibus? Ad assumenda at commodi consectetur cupiditate delectus eius error\n' +
+'  facere fuga hic, incidunt, laudantium magni maiores molestiae nisi obcaecati perspiciatis, rerum similique sunt\n' +
+'  suscipit. Ab dignissimos eaque inventore iste laborum molestias neque ut voluptate! Laboriosam, magni quasi! Alias\n' +
+'  aliquam architecto, beatae commodi consequatur corporis debitis deserunt dolorum eius error esse fuga fugiat fugit id\n' +
+'  illum in ipsam libero magni molestiae molestias mollitia nulla obcaecati omnis placeat possimus quaerat quas quo\n' +
+'  ratione reiciendis repellat reprehenderit repudiandae rerum saepe sequi sint soluta voluptatibus. Ab, accusamus\n' +
+'  adipisci assumenda cupiditate ducimus, eum impedit, inventore ipsa minus molestias necessitatibus numquam perferendis\n' +
+'  placeat quas rem similique vel. Accusamus culpa dolorum ea earum eum excepturi, iusto laboriosam magnam molestiae\n' +
+'  natus nesciunt non, numquam odit officiis praesentium quae quibusdam, tempore. Ab accusamus corporis cupiditate\n' +
+'  dolorum ducimus ea eaque eius expedita, facilis ipsa laudantium maxime minus nemo obcaecati officiis perspiciatis\n' +
+'  placeat praesentium quasi qui quibusdam quos rem rerum, sed sit tenetur ut vel velit! Accusamus dolores, quibusdam. Ab\n' +
+'  alias, autem corporis debitis, harum impedit ipsum iusto minus nisi quod saepe, similique tenetur? Consectetur\n' +
+'  cupiditate, deleniti provident quisquam reiciendis unde! Aliquid animi consectetur delectus exercitationem libero\n' +
+'  minima modi quaerat sint, vitae. Animi error iure laborum laudantium, nam nemo nulla omnis, optio quis, repudiandae\n' +
+'  similique veniam. Architecto atque debitis, dicta dolor enim illo incidunt ipsum minima minus nam nihil nisi nobis\n' +
+'  nostrum numquam obcaecati officiis placeat, quas quidem quod ratione rem ut veniam voluptate. Adipisci dolorem eos\n' +
+'  esse et eum facilis minima praesentium quaerat sed? Fugiat id, iusto odio officia praesentium quis reiciendis!\n' +
+'  Accusamus accusantium dolor exercitationem nemo nostrum temporibus ut! Cum impedit iste qui sit tempore. Autem,\n' +
+'  dignissimos dolore doloremque, ducimus eaque eius in, ipsam ipsum odio quos reprehenderit voluptatibus! Aliquam at aut\n' +
+'  cumque cupiditate, debitis delectus dolore error hic inventore, iure laboriosam minus molestias natus non nulla,\n' +
+'  officia possimus quidem reiciendis saepe velit. Consectetur consequuntur ea in laboriosam magni nam officia placeat\n' +
+'  unde! Adipisci aut delectus et eum laborum maiores, qui sed vitae voluptatum! Accusamus accusantium animi at aut\n' +
+'  beatae cum deleniti distinctio dolorem doloremque doloribus eum fuga fugit impedit ipsum magnam magni molestiae, non\n' +
+'  numquam optio possimus quam qui quia quisquam reiciendis, repellendus sint soluta vel veritatis vero voluptas. Beatae\n' +
+'  eaque laudantium molestias non officia provident rem repellat sed, sequi, similique soluta, vel veritatis. Ad beatae\n' +
+'  dicta ipsum placeat rerum?' | pipePersonalizado:5}}</p>
+

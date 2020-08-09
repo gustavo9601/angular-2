@@ -6,13 +6,21 @@ import { AppComponent } from './app.component';
 import { BindingEventosComponent } from './binding-eventos/binding-eventos.component';
 import { ComunicacionComponentesComponent } from './comunicacion-componentes/comunicacion-componentes.component';
 import { HijoComponent } from './comunicacion-componentes/hijo/hijo.component';
+import { DirectivasComponent } from './directivas/directivas.component';
+import {DirectivaPersonalizadaDirective} from './directivas/directiva-personalizada.directive';
+import { PipesComponent } from './pipes/pipes.component';
+import { PipePersonalizadoPipe } from './pipes/pipe-personalizado.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     BindingEventosComponent,
     ComunicacionComponentesComponent,
-    HijoComponent
+    HijoComponent,
+    DirectivasComponent,
+    DirectivaPersonalizadaDirective,
+    PipesComponent,
+    PipePersonalizadoPipe
   ],
   imports: [
     BrowserModule,

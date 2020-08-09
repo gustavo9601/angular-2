@@ -1,0 +1,9 @@
+.is-active {
+  background-color: gold;
+  color: aliceblue;
+}
+
+.not-active {
+  background-color: red;
+  color: wheat;
+}
