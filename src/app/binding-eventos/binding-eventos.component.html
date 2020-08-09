@@ -1,0 +1,34 @@
+
+
+<h1>Prorperity Binding</h1>
+<button [disabled]="disabled" class="btn btn-block btn-primary">Esta desabilitado</button>
+
+<h1>Class Binding</h1>
+<!--[class.claseCss]="Condicion a evaluar"-->
+<button class="btn" [class.btn-primary]="disabled"
+        (click)="disabled=!disabled">Esta en disabled</button>
+
+<h1>Style Binding</h1>
+<!--[style.propiedadCss]="Condicion a evaluar"
+Propiedades
+https://www.w3schools.com/jsref/dom_obj_style.asp
+-->
+<button class="btn" [style.backgroundColor] = "disabled ? 'green' : 'red'"
+        (click)="disabled=!disabled">Esta en disabled</button>
+
+<h1>Event Binding</h1>
+<button class="btn btn-success" (mouseover)="disabled=!disabled">Event Mouse Over</button>
+<button class="btn btn-success block" (mouseleave)="eventos($event)">Ver el evento ejecutado en consola</button>
+
+<h1>Event Filtering</h1>
+<!-- (keyup.enter) = "funcion" permite ejecutar cuando se de enter en el input -->
+<input type="text" (keyup)="onKeyUp($event)" class="form form-control" #inputText>
+<p>Ultima letra escrita: {{letra}}</p>
+<p>Codigo ultima letra o evento: {{cod_keyboard}}</p>
+<p>Valor del input via event: {{valor_input}}</p>
+<p>Valor del input via Template Variable: {{inputText.value}}</p>
+<hr>
+
+<h1>Two Way Data Binding</h1>
+<input type="text" [(ngModel)]="inputTextTwoWayDataBinding" class="form form-control">
+<p>Texto inputTextTwoWayDataBinding: {{inputTextTwoWayDataBinding}}</p>
