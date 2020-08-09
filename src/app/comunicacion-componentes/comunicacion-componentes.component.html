@@ -1,0 +1,12 @@
+<h1>Comunicacion entre componentes</h1>
+
+<!--Le pasamos al hijo la propiedad [persona]-->
+<!-- El componente hijo emitira el evento (hijo)="Funcion En el Padre que reibira el valor" -->
+<app-hijo [persona]="persona"
+          (hijo)="getInformacionHijo($event)"></app-hijo>
+
+<div *ngIf="hijoEnvioAlgo">
+  <h3>Informacion que se emitio del hijo al padre:</h3>
+  <p>Nombre: {{hijoEnvioAlgo.nombre}}</p>
+  <p>Edad: {{hijoEnvioAlgo.edad}}</p>
+</div>
