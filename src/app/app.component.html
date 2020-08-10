@@ -1,20 +1,20 @@
-<app-binding-eventos></app-binding-eventos>
+<div class="btn-group-vertical">
+  <button class="btn btn-dark" [routerLink]="['/binding-events']">Binding Events</button>
+  <button class="btn btn-dark" [routerLink]="['/comunicacion-componentes']">Comunicacion Componentes</button>
+  <button class="btn btn-dark" [routerLink]="['/directivas']">Directivas</button>
+  <button class="btn btn-dark" [routerLink]="['/pipes']">Pipes</button>
+  <button class="btn btn-dark" [routerLink]="['/pipes-pruebas',2]">Pipes Pruebas</button>
+  <!--Parametros ?variable=valor&variable=valor-->
+  <button class="btn btn-dark" [routerLink]="['/pipes-pruebas',2]" [queryParams]="{nuevo:'carro', website:'urlsss'}">
+    Pipes Pruebas query params
+  </button>
+</div>
 
+<router-outlet></router-outlet>
 
 <hr>
-
-<app-comunicacion-componentes></app-comunicacion-componentes>
-
-<hr>
-
-<app-directivas></app-directivas>
-
-
-<hr>
-<app-pipes></app-pipes>
-
-<hr>
-<h1>Lista de posts con funcion desde el componente</h1>
+<h1>Implementacion de servicios</h1>
+<h2>Lista de posts con funcion desde el componente</h2>
 <ul>
   <li *ngFor="let lista of listaDePosts.slice(0,5)">
     <p>{{lista.userId}}</p>
@@ -22,7 +22,7 @@
   </li>
 </ul>
 
-<h1>Lista de comentarios con variable como observable</h1>
+<h2>Lista de comentarios con variable como observable</h2>
 <ul>
   <!--El pipe async permitira desemvolver la data del observable-->
   <li *ngFor="let comentario of listaDeComenarios$ | async">
@@ -33,4 +33,5 @@
 
 <h1>Crando nuevos post</h1>
 <p>Titulo, enter y mira la respuesta por consola</p>
-<input type="text" [(ngModel)]="inputNewPost" (keyup.enter)="createNewPost()" placeholder="Titulo para el post y enter" class="form form-control">
+<input type="text" [(ngModel)]="inputNewPost" (keyup.enter)="createNewPost()" placeholder="Titulo para el post y enter"
+       class="form form-control">

@@ -3,6 +3,7 @@ import {ServicioService} from './servicios/servicio.service';
 import {PostModelI} from './modelos/post.modelI';
 import {ComentariosModelI} from './modelos/comentarios.modelI';
 import {Observable} from 'rxjs';
+import {ActivatedRoute} from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -19,12 +20,33 @@ export class AppComponent implements OnInit {
 
   inputNewPost: string = '';
 
-  constructor(private _servicio: ServicioService) {
+  constructor(private _servicio: ServicioService,
+              private route: ActivatedRoute) {
   }
 
   ngOnInit(): void {
     this.loadPosts();
     this.loadComments();
+
+    this.route.paramMap.subscribe(
+      (respuesta) => {
+        console.log("respuesta rutas", respuesta);
+        // Capturamos si vienen parametros en la URL
+        // respuesta.get('id');
+      }
+    );
+
+    this.route.queryParamMap.subscribe(
+      (respuesta) => {
+        console.log("respuesta parametros", respuesta);
+        // Capturamos si vienen parametros en la URL
+        // respuesta.get('id');
+      }
+    );
+
+    //Accedemos directamente al parametro
+    //this.route.snapshot.queryParamMap.get('id_parametro')
+
   }
 
   loadPosts() {
