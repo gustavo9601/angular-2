@@ -30,7 +30,7 @@ export class AppComponent implements OnInit {
 
     this.route.paramMap.subscribe(
       (respuesta) => {
-        console.log("respuesta rutas", respuesta);
+        console.log('respuesta rutas', respuesta);
         // Capturamos si vienen parametros en la URL
         // respuesta.get('id');
       }
@@ -38,7 +38,7 @@ export class AppComponent implements OnInit {
 
     this.route.queryParamMap.subscribe(
       (respuesta) => {
-        console.log("respuesta parametros", respuesta);
+        console.log('respuesta parametros', respuesta);
         // Capturamos si vienen parametros en la URL
         // respuesta.get('id');
       }
