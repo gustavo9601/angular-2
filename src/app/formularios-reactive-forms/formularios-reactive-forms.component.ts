@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {FormControl, FormGroup, Validators} from '@angular/forms';
+import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 
 import {UsuarioValidator} from './usuario.validator';
 
@@ -11,14 +11,21 @@ import {UsuarioValidator} from './usuario.validator';
 export class FormulariosReactiveFormsComponent implements OnInit {
 
 
+  constructor(private _fb: FormBuilder) {
+  }
+
+  //Formulario simplificada con formbuilder
+  formularioFormBuilder = this._fb.group({
+    usuario:['', [Validators.required]], // se puede sensilla
+    // o llamando toda la instancia por inyeccion
+    password: this._fb.control('', [Validators.required, Validators.minLength(2), UsuarioValidator.noEspaciosEnBlanco]),
+  });
+
   //UsuarioValidator.noEspaciosEnBlanco validacion personalizado
   formularioReactivo = new FormGroup({
     usuario: new FormControl('', [Validators.required]),
     password: new FormControl('', [Validators.required, Validators.minLength(2), UsuarioValidator.noEspaciosEnBlanco]),
   });
-
-  constructor() {
-  }
 
   ngOnInit() {
   }
