@@ -1,3 +1,20 @@
-<p>
-  formularios-reactive-forms works!
-</p>
+<hr>
+<div class="container"  >
+  <form action="" class="form" [formGroup]="formularioReactivo">
+    {{formularioReactivo.value | json}}
+    Usuario: <input type="text"
+                    class="form-control"
+                    formControlName="usuario"
+                    [class.is-invalid]="formularioReactivo.get('usuario').touched && formularioReactivo.get('usuario').invalid"><br>
+
+    <!--En el componente se crea el getter para poder acceder rapidamente a la propiedad-->
+    Password: <input type="password"
+                     class="form-control"
+                     formControlName="password"
+                      [class.is-invalid]="password.touched && password.invalid">
+    <small class="text-danger" *ngIf="password.errors?.required && password.touched">Password requerido</small><br>
+    <small class="text-danger" *ngIf="password.errors?.minlength && password.touched">Password minimo de 2 caracteres</small><br>
+    password.errors: {{password?.errors | json}} <br>
+    <button class="btn btn-dark">Enviar</button>
+  </form>
+</div>

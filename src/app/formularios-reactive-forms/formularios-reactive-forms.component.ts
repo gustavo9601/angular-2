@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {FormControl, FormGroup, Validators} from '@angular/forms';
+
+import {UsuarioValidator} from './usuario.validator';
 
 @Component({
   selector: 'app-formularios-reactive-forms',
@@ -7,9 +10,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FormulariosReactiveFormsComponent implements OnInit {
 
-  constructor() { }
+
+  //UsuarioValidator.noEspaciosEnBlanco validacion personalizado
+  formularioReactivo = new FormGroup({
+    usuario: new FormControl('', [Validators.required]),
+    password: new FormControl('', [Validators.required, Validators.minLength(2), UsuarioValidator.noEspaciosEnBlanco]),
+  });
+
+  constructor() {
+  }
 
   ngOnInit() {
+  }
+
+  //Usando un getter para poder acceder solo desde password
+  get password() {
+    return this.formularioReactivo.get('password');
   }
 
 }

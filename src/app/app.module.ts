@@ -2,6 +2,7 @@ import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
 import {FormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
+import {ReactiveFormsModule} from '@angular/forms';
 
 import {AppComponent} from './app.component';
 import {BindingEventosComponent} from './binding-eventos/binding-eventos.component';
@@ -13,9 +14,9 @@ import {PipePersonalizadoPipe} from './pipes/pipe-personalizado.pipe';
 import {NotFoundComponent} from './not-found/not-found.component';
 import {AppRoutingModule} from './app-routing.module';
 
-import { FormulariosReactiveFormsComponent } from './formularios-reactive-forms/formularios-reactive-forms.component';
-import { FormulariosTemplateDrivenFormsComponent } from './formularios-template-driven-forms/formularios-template-driven-forms.component';
-import { ServiciosEjemploComponent } from './servicios-ejemplo/servicios-ejemplo.component';
+import {FormulariosReactiveFormsComponent} from './formularios-reactive-forms/formularios-reactive-forms.component';
+import {FormulariosTemplateDrivenFormsComponent} from './formularios-template-driven-forms/formularios-template-driven-forms.component';
+import {ServiciosEjemploComponent} from './servicios-ejemplo/servicios-ejemplo.component';
 
 
 @NgModule({
@@ -36,6 +37,7 @@ import { ServiciosEjemploComponent } from './servicios-ejemplo/servicios-ejemplo
     FormsModule,
     HttpClientModule,
     AppRoutingModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
