@@ -9,6 +9,7 @@ import {FormulariosReactiveFormsComponent} from './formularios-reactive-forms/fo
 import {FormulariosTemplateDrivenFormsComponent} from './formularios-template-driven-forms/formularios-template-driven-forms.component';
 import {ServiciosEjemploComponent} from './servicios-ejemplo/servicios-ejemplo.component';
 import {ProyeccionDeContenidoComponent} from './proyeccion-de-contenido/proyeccion-de-contenido.component';
+import {ViewchildComponent} from './viewchild/viewchild.component';
 
 
 const routes: Routes = [
@@ -44,6 +45,9 @@ const routes: Routes = [
   },
   {
     path: 'proyeccion-contenido', component: ProyeccionDeContenidoComponent,
+  },
+  {
+    path: 'viewchild', component: ViewchildComponent,
   },
   {
     path: '**', component: NotFoundComponent

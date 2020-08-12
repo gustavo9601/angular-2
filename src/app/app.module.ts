@@ -19,6 +19,8 @@ import {FormulariosTemplateDrivenFormsComponent} from './formularios-template-dr
 import {ServiciosEjemploComponent} from './servicios-ejemplo/servicios-ejemplo.component';
 import { ProyeccionDeContenidoComponent } from './proyeccion-de-contenido/proyeccion-de-contenido.component';
 import { TemplateContenidoComponent } from './proyeccion-de-contenido/template-contenido.component';
+import { ViewchildComponent } from './viewchild/viewchild.component';
+import { ViewchildHijoComponent } from './viewchild/viewchild-hijo.component';
 
 
 
@@ -36,6 +38,8 @@ import { TemplateContenidoComponent } from './proyeccion-de-contenido/template-c
     ServiciosEjemploComponent,
     ProyeccionDeContenidoComponent,
     TemplateContenidoComponent,
+    ViewchildComponent,
+    ViewchildHijoComponent,
   ],
   imports: [
     BrowserModule,
