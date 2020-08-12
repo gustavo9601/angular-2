@@ -17,6 +17,9 @@ import {AppRoutingModule} from './app-routing.module';
 import {FormulariosReactiveFormsComponent} from './formularios-reactive-forms/formularios-reactive-forms.component';
 import {FormulariosTemplateDrivenFormsComponent} from './formularios-template-driven-forms/formularios-template-driven-forms.component';
 import {ServiciosEjemploComponent} from './servicios-ejemplo/servicios-ejemplo.component';
+import { ProyeccionDeContenidoComponent } from './proyeccion-de-contenido/proyeccion-de-contenido.component';
+import { TemplateContenidoComponent } from './proyeccion-de-contenido/template-contenido.component';
+
 
 
 @NgModule({
@@ -30,7 +33,9 @@ import {ServiciosEjemploComponent} from './servicios-ejemplo/servicios-ejemplo.c
     NotFoundComponent,
     FormulariosReactiveFormsComponent,
     FormulariosTemplateDrivenFormsComponent,
-    ServiciosEjemploComponent
+    ServiciosEjemploComponent,
+    ProyeccionDeContenidoComponent,
+    TemplateContenidoComponent,
   ],
   imports: [
     BrowserModule,

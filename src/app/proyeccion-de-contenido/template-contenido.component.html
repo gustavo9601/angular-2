@@ -1,0 +1,17 @@
+
+<!--Usando esta directiva, cuando se llame este componente , permite hacer esta un cotenedor o plantilla base
+
+<app-template-contenido>
+Contenido html, objetos componentes
+</app-template-contenido>
+
+-->
+<div class="container">
+  Contenedor
+  <ng-content></ng-content>
+
+  <!--Seleccionando por elemento que queremos rendirazara en eas vista, de todo lo que se envie-->
+  <hr>
+ <!-- <ng-content select="button"></ng-content>
+  <ng-content select="p"></ng-content>-->
+</div>
