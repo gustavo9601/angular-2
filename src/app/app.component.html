@@ -2,36 +2,15 @@
   <button class="btn btn-dark" [routerLink]="['/binding-events']">Binding Events</button>
   <button class="btn btn-dark" [routerLink]="['/comunicacion-componentes']">Comunicacion Componentes</button>
   <button class="btn btn-dark" [routerLink]="['/directivas']">Directivas</button>
+  <button class="btn btn-dark" [routerLink]="['/servicios']">Servicios ParamMap QueryMaps</button>
   <button class="btn btn-dark" [routerLink]="['/pipes']">Pipes</button>
-  <button class="btn btn-dark" [routerLink]="['/pipes-pruebas',2]">Pipes Pruebas</button>
+  <button class="btn btn-dark" [routerLink]="['/pipes-pruebas',2]">Pasando valores URL</button>
   <!--Parametros ?variable=valor&variable=valor-->
   <button class="btn btn-dark" [routerLink]="['/pipes-pruebas',2]" [queryParams]="{nuevo:'carro', website:'urlsss'}">
-    Pipes Pruebas query params
+    Pasando & ? parametros URL
   </button>
+  <button class="btn btn-dark" [routerLink]="['/formularios-tdf']">Formularios template drive forms</button>
+  <button class="btn btn-dark" [routerLink]="['/formularios-rf']">Formularios Reactive Forms</button>
 </div>
 
 <router-outlet></router-outlet>
-
-<hr>
-<h1>Implementacion de servicios</h1>
-<h2>Lista de posts con funcion desde el componente</h2>
-<ul>
-  <li *ngFor="let lista of listaDePosts.slice(0,5)">
-    <p>{{lista.userId}}</p>
-    <p>{{lista.title}}</p>
-  </li>
-</ul>
-
-<h2>Lista de comentarios con variable como observable</h2>
-<ul>
-  <!--El pipe async permitira desemvolver la data del observable-->
-  <li *ngFor="let comentario of listaDeComenarios$ | async">
-    <p>{{comentario.postId}}</p>
-    <p>{{comentario.name}}</p>
-  </li>
-</ul>
-
-<h1>Crando nuevos post</h1>
-<p>Titulo, enter y mira la respuesta por consola</p>
-<input type="text" [(ngModel)]="inputNewPost" (keyup.enter)="createNewPost()" placeholder="Titulo para el post y enter"
-       class="form form-control">

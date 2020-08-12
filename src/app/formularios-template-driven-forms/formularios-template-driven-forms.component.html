@@ -1,0 +1,47 @@
+<hr>
+<div class="container">
+  <form action="" class="form" #formularioUsuario="ngForm" (ngSubmit)="enviarFormularioUsuario(formularioUsuario)" >
+    {{ formularioUsuario.value | json }}
+    <div class="form-group">
+      <label for="">Nombre</label>
+      <!--Asignando a la variable de entorno formulario, ngModel tiene acceso a los estados del formulario-->
+      <input type="text"
+             #nombre="ngModel"
+             [class.is-invalid]="nombre.invalid && nombre.touched"
+             id="nombre"
+             class="form-control"
+             [(ngModel)]="usuario.nombre"
+             name="nombre"
+             required>
+      <small *ngIf="nombre.invalid" class="text-danger">Nombre Invalido</small>
+    </div>
+    <div class="form-group">
+      <label for="">Phone</label>
+      <input
+        #phone="ngModel"
+        required
+        minlength="9"
+        type="text"
+        id="phone"
+        class="form-control"
+        [(ngModel)]="usuario.phone"
+        [class.is-invalid]="phone.invalid && phone.touched"
+        name="phone">
+      <!--Si la propiedad .errors existe-->
+      phone.errors: {{phone?.errors | json}}
+      <div *ngIf="phone.errors && (phone.invalid || phone.touched)">
+        <small *ngIf="phone.errors.required" class="text-danger">Phone Invalido</small>
+        <small *ngIf="phone.errors.minlength" class="text-danger">El phone debe ser mayor a 9 digitos</small>
+      </div>
+    </div>
+    <div class="form-group">
+      <input type="checkbox" name="suscribirse" ngModel required> Deseo recibir email
+    </div>
+    <div class="form-group">
+      <label for="">Mensaje</label>
+      <textarea  id="mensaje" cols="30" rows="10" class="form-control" [(ngModel)]="usuario.mensaje" name="mensaje"></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary">Enviar Usuario</button>
+
+  </form>
+</div>

@@ -12,7 +12,10 @@ import {PipesComponent} from './pipes/pipes.component';
 import {PipePersonalizadoPipe} from './pipes/pipe-personalizado.pipe';
 import {NotFoundComponent} from './not-found/not-found.component';
 import {AppRoutingModule} from './app-routing.module';
-import {ComunicacionComponentesModule} from './comunicacion-componentes/comunicacion-componentes.module';
+
+import { FormulariosReactiveFormsComponent } from './formularios-reactive-forms/formularios-reactive-forms.component';
+import { FormulariosTemplateDrivenFormsComponent } from './formularios-template-driven-forms/formularios-template-driven-forms.component';
+import { ServiciosEjemploComponent } from './servicios-ejemplo/servicios-ejemplo.component';
 
 
 @NgModule({
@@ -23,7 +26,10 @@ import {ComunicacionComponentesModule} from './comunicacion-componentes/comunica
     DirectivaPersonalizadaDirective,
     PipesComponent,
     PipePersonalizadoPipe,
-    NotFoundComponent
+    NotFoundComponent,
+    FormulariosReactiveFormsComponent,
+    FormulariosTemplateDrivenFormsComponent,
+    ServiciosEjemploComponent
   ],
   imports: [
     BrowserModule,
